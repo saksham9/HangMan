@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" href="index.css" />
+    
+  </head>
+  <body>
+      <div class="img-content">
+          <h2>HangMan</h2>
+          <button id="hard" onclick="startGame(this)">Hard</button>
+          <button id="medium" onclick="startGame(this)">Medium</button>
+          <button id="easy" onclick="startGame(this)">Easy</button>
+      </div>
+      <div id="game-container" class="game-container">
+          <div id="blanks" class="blanks"></div>
+          <div id="keyboard" class="keyboard"></div>
+      </div>
+      <script src="index.js"></script>
+  </body>
+  </html>
