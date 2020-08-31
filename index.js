@@ -27,6 +27,18 @@ const creategrid=(len)=>{
         blanks.appendChild(blank);
     }
 }
+const createlife=()=>{
+    const hearts=document.getElementById("hearts");
+    const heading=document.getElementById("lifeheading");
+    heading.innerHTML="Life:";
+    for(let i=0;i<5;i++){
+        const heart=document.createElement("div");
+        heart.classList="heart";
+        heart.id="heart"+i;
+        hearts.appendChild(heart);
+    }
+
+}
 const startGame=(el)=>{
     window.selected="";
     if(el.id==="hard"){
@@ -39,6 +51,7 @@ const startGame=(el)=>{
         selected=easy[Math.floor(Math.random()*hard.length)];
     }
     keyboard();
+    createlife();
     console.log(selected);
     creategrid(selected.length);
 }
@@ -74,6 +87,9 @@ const handleclick = (el)=>{
         }
     }
     if(find===false){
+        //console.log("heart"+(4-life));
+        const heart=document.getElementById("heart"+(4-life));
+        heart.classList.remove("heart");
         life++;
     }
     if(life===5){
